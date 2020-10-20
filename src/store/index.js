@@ -12,6 +12,11 @@ export default new Vuex.Store({
       { name: "tiger", active: false },
       { name: "siamese", active: true },
     ],
+    actions: [
+      { actionSet: "ActionSet1", actions: ["Action1", "Action2", "Action3"] },
+      { actionSet: "ActionSet2", actions: ["Action4", "Action5", "Action6"] },
+      { actionSet: "ActionSet3", actions: ["Action7", "Action8", "Action9"] },
+    ],
   },
   getters: {
     processedImages(state) {
@@ -19,6 +24,9 @@ export default new Vuex.Store({
     },
     tags(state) {
       return state.tags;
+    },
+    actions(state) {
+      return state.actions;
     },
   },
   mutations: {
@@ -38,6 +46,9 @@ export default new Vuex.Store({
     saveTags(state, payload) {
       state.tags = payload;
       localStorage.tags = JSON.stringify(payload);
+    },
+    saveActions(state, payload) {
+      state.actions = payload;
     }
   },
   actions: {
@@ -47,6 +58,9 @@ export default new Vuex.Store({
     storeTags(context, payload) {
       context.commit("saveTags", payload);
     },
+    storeActions(context, payload) {
+      context.commit("saveActions", payload);
+    }
   },
   modules: {},
 });

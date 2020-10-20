@@ -10,7 +10,7 @@
           <v-chip
             v-for="tag in tags"
             :key="tag.name"
-            class="mx-1"
+            class="ma-1"
             :color="tag.active ? 'green' : 'grey'"
             @click="toggleTag(tag)"
             >{{ tag.name }}</v-chip
