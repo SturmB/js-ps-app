@@ -6,10 +6,19 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     processedImages: 0,
+    tags: [
+      { name: "lynx", active: true },
+      { name: "lion", active: true },
+      { name: "tiger", active: false },
+      { name: "siamese", active: true },
+    ],
   },
   getters: {
     processedImages(state) {
       return state.processedImages;
+    },
+    tags(state) {
+      return state.tags;
     },
   },
   mutations: {
@@ -26,10 +35,17 @@ export default new Vuex.Store({
         localStorage.processedImages = state.processedImages;
       }
     },
+    saveTags(state, payload) {
+      state.tags = payload;
+      localStorage.tags = JSON.stringify(payload);
+    }
   },
   actions: {
     storeProcessedImages(context, payload) {
       context.commit("saveProcessedImages", payload);
+    },
+    storeTags(context, payload) {
+      context.commit("saveTags", payload);
     },
   },
   modules: {},
