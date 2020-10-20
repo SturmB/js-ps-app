@@ -34,8 +34,11 @@ export default {
       console.log(s);
     },
     goto(route) {
-      // eslint-disable-next-line
-      this.$router.push({ path: route }).catch((err) => {});
+      if (localStorage.validation) {
+        this.$router.push({ path: route }).catch(() => {});
+      } else {
+        this.$router.push({ path: "/" }).catch(() => {});
+      }
     },
   },
 };
