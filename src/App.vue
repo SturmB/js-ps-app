@@ -2,7 +2,7 @@
   <v-app>
     <window-bar></window-bar>
     <navigation></navigation>
-    <v-content>
+    <v-main>
       <v-container>
         <v-row>
           <v-col>
@@ -14,7 +14,7 @@
           </v-col>
         </v-row>
       </v-container>
-    </v-content>
+    </v-main>
     <window-footer></window-footer>
   </v-app>
 </template>
@@ -36,6 +36,13 @@ export default {
   data: () => ({
     //
   }),
+
+  created() {
+    this.$store.dispatch(
+      "storeProcessedImages",
+      localStorage.processedImages || 0
+    );
+  },
 
   methods: {},
 };
