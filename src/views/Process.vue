@@ -7,6 +7,18 @@
         :actionsData="actionsData"
         @actions-change="updateActionsObject"
       ></actions>
+      <v-btn
+        color="pink"
+        fab
+        absolute
+        bottom
+        right
+        class="mb-4 mr-2"
+        @click="runProcess"
+        :disabled="files.length === 0"
+      >
+        <v-icon>mdi-play</v-icon>
+      </v-btn>
     </v-container>
   </v-form>
 </template>
@@ -44,6 +56,14 @@ export default {
     },
     updateActionsObject(actionsObject) {
       this.actionsObj = actionsObject;
+    },
+    runProcess() {
+      let payload = {
+        files: this.files.map((f) => f.path),
+        tags: this.tagsData.filter((tag) => tag.active).map((tag) => tag.name),
+        actions: this.actionsObj,
+      };
+      console.log(payload);
     },
   },
   created() {

@@ -55,6 +55,9 @@ export default {
     this.currentActionSet = this.actionSets[0];
     this.currentAction = this.actions[0];
   },
+  mounted() {
+    this.$refs.actions.$listeners.change();
+  },
   watch: {
     actionSets() {
       this.currentActionSet = this.actionSets[0];
