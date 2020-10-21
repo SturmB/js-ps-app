@@ -7,5 +7,6 @@
     "nwVersion": "0.49.0",
     "nwFlavor": "sdk"
   },
-  "main": "http://localhost:8080"
+  "main": "http://localhost:8080",
+  "chromium-args": "--load-extension='./node_modules/nw-vue-devtools-prebuilt/extension'"
 }
