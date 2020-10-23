@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <window-bar></window-bar>
+    <window-bar style="-webkit-app-region: drag"></window-bar>
     <navigation></navigation>
     <v-main>
       <v-container>

@@ -5,8 +5,22 @@
   "product_string": "js-ps-app",
   "build": {
     "nwVersion": "0.49.0",
-    "nwFlavor": "sdk"
+    "nwFlavor": "sdk",
+    "strippedProperties": [
+      "scripts",
+      "devDependencies",
+      "build",
+      "chromium-args"
+    ]
+  },
+  "window": {
+    "width": 600,
+    "height": 500,
+    "min-width": 600,
+    "min-height": 500,
+    "frame": false
   },
   "main": "http://localhost:8080",
-  "chromium-args": "--load-extension='./node_modules/nw-vue-devtools-prebuilt/extension'"
+  "chromium-args": "--load-extension='./node_modules/nw-vue-devtools-prebuilt/extension'",
+  "node-remote": [ "<all_urls>" ]
 }
