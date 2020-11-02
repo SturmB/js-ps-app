@@ -1,6 +1,7 @@
 [submodule "generator/generator-core"]
 	path = generator/generator-core
 	url = git@github.com:adobe-photoshop/generator-core.git
+	ignore = dirty
 [submodule "generator/plugins/generator-starter"]
 	path = generator/plugins/generator-starter
 	url = git@github.com:undavide/generator-starter.git
