@@ -5,3 +5,4 @@
 [submodule "generator/plugins/generator-starter"]
 	path = generator/plugins/generator-starter
 	url = git@github.com:undavide/generator-starter.git
+	ignore = dirty
