@@ -8,14 +8,17 @@
     "lint": "vue-cli-service lint",
     "nwdev": "concurrently --kill-others --raw \"npm:serve\" \".\\node_modules\\.bin\\run .\\nwdev\" --success 'first'",
     "generator": "node --inspect .\\generator\\generator-core\\app -f .\\generator\\plugins -v",
-    "generator-watch": "nodemon --watch ./generator/plugins --inspect ./generator/generator-core/app --verbose -f ./generator/plugins"
+    "generator-watch": "nodemon --watch .\\generator\\plugins --inspect .\\generator\\generator-core\\app --verbose -f .\\generator\\plugins",
+    "dev": "concurrently --names 'NW,Generator' -c 'black.bgYellow,black.bgRed' 'npm:nwdev' 'npm:generator-watch'"
   },
   "dependencies": {
     "@mdi/font": "^3.6.95",
     "core-js": "^3.6.5",
     "roboto-fontface": "*",
+    "socket.io-client": "^3.0.1",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
+    "vue-socket.io-extended": "^4.0.5",
     "vue-the-mask": "^0.11.1",
     "vuetify": "^2.2.11",
     "vuex": "^3.4.0"

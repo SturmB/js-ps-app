@@ -37,6 +37,12 @@ export default {
     //
   }),
 
+  sockets: {
+    connect() {
+      console.log("The client has connected");
+    },
+  },
+
   created() {
     this.$store.dispatch(
       "storeProcessedImages",
